@@ -21,7 +21,6 @@ public class CollisionDetector {
 
                 if (list.get(i) instanceof Beer) {
                     beerHitSound.play(true);
-
                     list.get(i).getPicture().delete();
                     list.remove(list.get(i));
                     cadet.setScore(cadet.getScore() + 20);

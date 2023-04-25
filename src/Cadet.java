@@ -15,11 +15,6 @@ public class Cadet implements KeyboardHandler {
     private Rectangle cadet;
 
 
-    private Picture picture2 = new Picture(625, 600, "ResizeCadetLeft.png");
-
-
-
-
     public Cadet() {
         picture = new Picture(625, 600, "ResizeCadetRight.png");
         picture.draw();
@@ -43,27 +38,18 @@ public class Cadet implements KeyboardHandler {
         leftKeyPressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(leftKeyPressed);
 
-
-
         //jump
         KeyboardEvent upKeyPressed = new KeyboardEvent();
         upKeyPressed.setKey(KeyboardEvent.KEY_UP);
         upKeyPressed.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-
         keyboard.addEventListener(upKeyPressed);
 
-        //jumprelease
+        //jumpRelease
         KeyboardEvent upKeyReleased = new KeyboardEvent();
         upKeyReleased.setKey(KeyboardEvent.KEY_UP);
         upKeyReleased.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         keyboard.addEventListener(upKeyReleased);
-
-
-
-
-
     }
-
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
@@ -73,12 +59,6 @@ public class Cadet implements KeyboardHandler {
                 hitBox().translate(-20, 0);
                 cadet.translate(-20, 0);
                 picture.translate(-20, 0);
-                /*picture.delete();
-                hitBox().delete();
-                picture = new Picture(picture.getX(), picture.getY() ,"ResizeCadetLeft.png");
-                picture.draw();*/
-
-
             }
         }
         //MOVE RIGHT
@@ -87,11 +67,6 @@ public class Cadet implements KeyboardHandler {
                 hitBox().translate(20, 0);
                 cadet.translate(20, 0);
                 picture.translate(20, 0);
-                /*picture.delete();
-                hitBox().delete();
-                picture = new Picture(picture.getX(), picture.getY() ,"ResizeCadetRight.png");
-                picture.draw();*/
-
             }
         }
         //jump
@@ -100,18 +75,9 @@ public class Cadet implements KeyboardHandler {
                 hitBox().translate(0, -150);
                 cadet.translate(0, -150);
                 picture.translate(0, -150);
-                /*picture.delete();
-                hitBox().delete();
-                picture = new Picture(picture.getX(), picture.getY() ,"ResizeCadetRight.png");
-                picture.draw();*/
             }
-
         }
-
-
     }
-
-
 
     public Rectangle hitBox() {
         return rectangle = new Rectangle(cadet.getX() , cadet.getY() , cadet.getWidth() , cadet.getHeight() );
@@ -133,20 +99,12 @@ public class Cadet implements KeyboardHandler {
                 hitBox().translate(0, 150);
                 cadet.translate(0, 150);
                 picture.translate(0, 150);
-                /*picture.delete();
-                hitBox().delete();
-                picture = new Picture(picture.getX(), picture.getY(), "ResizeCadetRight.png");
-                picture.draw();*/
-
-
             }
-
         }
     }
     public int getScore() {
         return score;
     }
-
     public void setScore(int score) {
         this.score = score;
     }

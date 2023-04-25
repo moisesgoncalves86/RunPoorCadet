@@ -32,7 +32,6 @@ public class Game implements KeyboardHandler {
     private GameSounds gamePlay = new GameSounds("soundplay2.wav");
 
 
-
     public void init() throws RuntimeException, InterruptedException {
         while (!gameStarted) {
             System.out.println(" ");
@@ -43,7 +42,6 @@ public class Game implements KeyboardHandler {
 
         this.field = new Field();
         field.fieldInit();
-
 
         this.cadet = new Cadet();
 
@@ -98,7 +96,6 @@ public class Game implements KeyboardHandler {
             for (int i = 0; i < linkedList.size(); i++) {
                 linkedList.get(i).fall();
 
-
                 pum.jediCollision();
                 pum.fieldCollision();
                 screenScore.setText(" " + cadet.getScore());
@@ -106,8 +103,6 @@ public class Game implements KeyboardHandler {
             }
         }
         gameOver();
-
-
     }
 
     public void start() throws InterruptedException {
@@ -123,12 +118,9 @@ public class Game implements KeyboardHandler {
 
         gameOverSound.play(true);
 
-
         field.getBackground().delete();
         field.setBackground(new Picture(Field.PADDING, Field.PADDING, "GameOverScreen.png"));
         field.getBackground().draw();
-
-
     }
 
     public void nextLevel() {

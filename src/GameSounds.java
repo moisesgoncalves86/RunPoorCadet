@@ -24,7 +24,6 @@ public class GameSounds {
         if (var1) {
             this.clip.setFramePosition(0);
         }
-
         this.clip.start();
     }
 
@@ -49,7 +48,6 @@ public class GameSounds {
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException var3) {
             System.out.println(var3.getMessage());
         }
-
     }
 
     private void initClip(String var1) {
